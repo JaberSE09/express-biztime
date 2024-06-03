@@ -11,12 +11,12 @@ app.use("/companies", companiesRoute);
 
 /** 404 handler */
 
-// app.use(function(req, res, next) {
-//   // const err = new ExpressError("Not Found", 404);
+app.use(function(req, res, next) {
+  const err = new ExpressError("Not Found", 404);
 
-//   // pass err to the next middleware
-//   return next(err);
-// });
+  // pass err to the next middleware
+  return next(err);
+});
 
 /** general error handler */
 
